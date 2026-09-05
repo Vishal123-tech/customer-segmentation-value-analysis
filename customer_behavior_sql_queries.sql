@@ -3,7 +3,7 @@
 WITH ranked_customers AS (
     SELECT customer_id,
            SUM(purchase_amount) AS total_spent,
-           NTILE(10) OVER (ORDER BY SUM(purchase_amount) DESC) AS decile
+           NTILE(10) OVER (ORDER BY SUM(purchase_amount)  DESC) AS decile
     FROM customer
     GROUP BY customer_id
 )
